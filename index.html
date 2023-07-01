@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="index.css/t.css" />
+    <script
+      src="https://kit.fontawesome.com/3b0d5dea86.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <i class="fa-solid fa-temperature-high"></i>
+            </div>
+            <div class="col">
+        <form id="search" class="Search">
+        <div class="form-example">
+          <input
+            type="search"
+            placeholder="City name"
+            id="cityName"
+            required
+          />
+          <input type="submit" value="Search" class="btn btn-primary"/>
+        </div>
+        </form>
+        </div>
+        </div>
+      <h1>Pietermaritzburg</h1>
+        <p><strong>Today(01/06/2023)</strong></p>
+        <br/>
+        <div class="row">
+            <div class="col">
+      <i class="fa-sharp fa-solid fa-cloud-sun-rain"></i>
+      <span id="temperat"><strong>22°</strong></span><span class="units">
+                  <a href="#" id="celsius">°C</a> |
+                  <a href="#" id="fahrenheit">°F</a>
+                </span>
+</div>
+<div class="col">
+    <ul>
+       <li>Percipitation:0%</li>
+        <li>Humidity:58%</li>
+        <li>Wind:11 km/h</li>
+      </ul>
+      </div>
+      <hr/>
+        <div class="temp">
+  <div class="row">
+    <div class="col">
+       4am
+          <br />
+          ⛅
+          <br />
+          13°
+    </div>
+    <div class="col">
+      8am
+          <br />
+          ⛅
+          <br />
+          14°
+    </div>
+    <div class="col">
+      12pm
+          <br />
+          ⛅
+          <br />
+          19°
+    </div>
+    <div class="col">
+      4pm
+        <br/>
+        ⛅
+      <br/>
+     18°
+    </div>
+  </div>
+</div>
+<br/>
+      <h2>Next 5 Days</h2>
+      <div class="weather">
+  <div class="row">
+    <div class="col">
+        sat
+          <br />
+          &#9925;
+          <br />
+          22°      
+    </div>
+    <div class="col">
+      Sun
+          <br />
+          &#9728;&#65039;
+          <br />
+          27°
+    </div>
+    <div class="col">
+     Mon
+          <br />
+          &#9925;
+          <br />
+          23°
+    </div>
+    <div class="col">
+     Tue
+          <br />
+          &#9925;
+          <br />
+          24°
+    </div>
+    <div class="col">
+     Wed
+          <br />
+          &#9925;
+          <br />
+          23°
+    </div>
+  </div>
+</div>
+<button>Current location</button>
+    </div>
+    </div>
+    </script>
+    <script src="week.js/weather.js"></script>
+  </body>
+</html>
