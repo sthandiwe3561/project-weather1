@@ -12,7 +12,7 @@ div.body {
   margin: 0 auto;
   display: block;
   width: 600px;
-  height: 92vh;
+  height: 88vh;
   background: powderblue;
   margin-top: 20px;
 }
@@ -65,5 +65,8 @@ a {
 }
 .link {
   position: relative;
-  bottom: -60px;
+  bottom: -70px;
+}
+.units {
+  font-size: 20px;
 }
