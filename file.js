@@ -38,7 +38,6 @@ let p = document.querySelector("p");
 p.innerHTML = date(now);
 
 function temp(search) {
-  console.log(search.data);
   let temperate = Math.round(search.data.main.temp);
   let id = document.getElementById("temperat");
   id.innerHTML = temperate;
@@ -61,7 +60,6 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Durban&&units=me
 axios.get(`${apiUrl}&appid=${apiKey}`).then(temp);
 
 function temperature(response) {
-  console.log(response);
   let temperate = Math.round(response.data.main.temp);
   let id = document.getElementById("temperat");
   id.innerHTML = temperate;
