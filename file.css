@@ -43,10 +43,9 @@ ul {
   margin-top: 20px;
   color: #1a64d6;
 }
-.fa-cloud-sun-rain {
+img {
   position: relative;
   top: -30px;
-  color: yellow;
   font-size: 30px;
 }
 a {

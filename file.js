@@ -38,6 +38,7 @@ let p = document.querySelector("p");
 p.innerHTML = date(now);
 
 function temp(search) {
+  console.log(search.data);
   let temperate = Math.round(search.data.main.temp);
   let id = document.getElementById("temperat");
   id.innerHTML = temperate;
@@ -53,6 +54,9 @@ function temp(search) {
   let descrip = search.data.weather[0].description;
   let description = document.getElementById("description");
   description.innerHTML = `Description:${descrip}`;
+  let icon = search.data.weather[0].icon;
+  let iconn = document.querySelector("#icon");
+  iconn.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
 }
 
 let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
@@ -60,6 +64,7 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Durban&&units=me
 axios.get(`${apiUrl}&appid=${apiKey}`).then(temp);
 
 function temperature(response) {
+  console.log(response.data);
   let temperate = Math.round(response.data.main.temp);
   let id = document.getElementById("temperat");
   id.innerHTML = temperate;
@@ -75,6 +80,9 @@ function temperature(response) {
   let descrip = response.data.weather[0].description;
   let description = document.getElementById("description");
   description.innerHTML = `Description:${descrip}`;
+  let icon = response.data.weather[0].icon;
+  let iconn = document.querySelector("#icon");
+  iconn.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
 }
 function searchCity(city) {
   let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
