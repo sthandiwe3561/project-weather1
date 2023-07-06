@@ -37,19 +37,47 @@ function date(dates) {
 let p = document.querySelector("p");
 p.innerHTML = date(now);
 
+function temp(search) {
+  console.log(search.data);
+  let temperate = Math.round(search.data.main.temp);
+  let id = document.getElementById("temperat");
+  id.innerHTML = temperate;
+  let name = search.data.name;
+  let h1 = document.querySelector("#name");
+  h1.innerHTML = name;
+  let hum = search.data.main.humidity;
+  let humin = document.getElementById("humin");
+  humin.innerHTML = `Humidity:${hum}%`;
+  let windy = Math.round(search.data.wind.speed);
+  let speed = document.getElementById("Wind");
+  speed.innerHTML = `Windspeed:${windy}km/h`;
+  let descrip = search.data.weather[0].description;
+  let description = document.getElementById("description");
+  description.innerHTML = `Description:${descrip}`;
+}
+
+let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Durban&&units=metric`;
+axios.get(`${apiUrl}&appid=${apiKey}`).then(temp);
+
 function temperature(response) {
   console.log(response);
   let temperate = Math.round(response.data.main.temp);
   let id = document.getElementById("temperat");
   id.innerHTML = temperate;
-  let temp = response.data.name;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = temp;
+  let name = response.data.name;
+  let h1 = document.querySelector("#name");
+  h1.innerHTML = name;
   let hum = response.data.main.humidity;
   let humin = document.getElementById("humin");
   humin.innerHTML = `Humidity:${hum}%`;
+  let windy = Math.round(response.data.wind.speed);
+  let speed = document.getElementById("Wind");
+  speed.innerHTML = `Windspeed:${windy}km/h`;
+  let descrip = response.data.weather[0].description;
+  let description = document.getElementById("description");
+  description.innerHTML = `Description:${descrip}`;
 }
-
 function searchCity(city) {
   let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&&units=metric`;
