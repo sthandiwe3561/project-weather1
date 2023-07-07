@@ -22,7 +22,7 @@ input[type="search"] {
   border: 2px solid black;
 }
 form {
-  margin-top: 20px;
+  bottom: -20px;
 }
 div.temp {
   margin-bottom: 70px;
@@ -38,11 +38,6 @@ ul {
   top: -30px;
   list-style-type: none;
 }
-.fa-temperature-high {
-  font-size: 80px;
-  margin-top: 20px;
-  color: #1a64d6;
-}
 img {
   position: relative;
   top: -30px;
@@ -51,6 +46,11 @@ img {
 a {
   text-decoration: none;
   font-size: 20px;
+}
+.fa-temperature-high {
+  font-size: 80px;
+  margin-top: 20px;
+  color: #1a64d6;
 }
 .location {
   display: block;

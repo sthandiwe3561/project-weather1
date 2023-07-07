@@ -92,7 +92,7 @@ function searchCity(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#cityName").value;
+  let city = document.querySelector("#city").value;
   searchCity(city);
 }
 let searchForm = document.querySelector("#search");
