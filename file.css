@@ -52,6 +52,24 @@ a {
   margin-top: 20px;
   color: #1a64d6;
 }
+.time {
+  position: relative;
+  top: -19px;
+}
+.image {
+  margin-top: 9px;
+  margin-right: -33px;
+}
+.weather-forecast-degree {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+.weatherDegree {
+  position: relative;
+  bottom: -13px;
+  right: 8px;
+}
 .location {
   display: block;
   margin: 0 auto;

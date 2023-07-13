@@ -58,6 +58,52 @@ function temperature(response) {
   let iconn = document.querySelector("#icon");
   iconn.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
 }
+function sunnyCity() {
+  let sun = document.querySelector("#Days");
+  let weather = `<div class=row>`;
+  let day = ["", "", "", ""];
+  day.forEach(function (date) {
+    weather =
+      weather +
+      ` <div class="col-3">
+        <div class="weather-forecast-date">Wed</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="forecast">
+          <span class="weatherDay"> 20° </span>
+          <span class="weatherNight"> 10° </span>
+        </div>
+      </div>`;
+  });
+  weather = weather + `</div>`;
+  sun.innerHTML = weather;
+}
+function timeDegree() {
+  let time = document.querySelector("#temparet");
+  let degree = `<div class=row>`;
+  let days = ["", "", ""];
+  days.forEach(function (day) {
+    degree =
+      degree +
+      `<div class="col-3">
+      <div class="weather-forecast-degree">
+       <div class="time">4am</div>
+          <img
+          class="image"
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+          <span class="weatherDegree">13°</span> 
+    </div>
+    </div>`;
+  });
+  degree = degree + `</div>`;
+  time.innerHTML = degree;
+}
 function searchCity(city) {
   let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&&units=metric`;
@@ -111,3 +157,5 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", displayCelsius);
 
 searchCity("Durban");
+sunnyCity();
+timeDegree();
