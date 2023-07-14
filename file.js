@@ -36,7 +36,14 @@ function date(dates) {
 }
 let p = document.querySelector("p");
 p.innerHTML = date(now);
-
+function display(coords) {
+  console.log(coords.lon);
+  let lat = coords.lat;
+  let long = coords.lon;
+  let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metrics`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(sunnyCity);
+}
 function temperature(response) {
   console.log(response.data);
   celsiusTemp = response.data.main.temp;
@@ -57,16 +64,19 @@ function temperature(response) {
   let icon = response.data.weather[0].icon;
   let iconn = document.querySelector("#icon");
   iconn.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
+  display(response.data.coord);
 }
-function sunnyCity() {
+
+function sunnyCity(submit) {
+  console.log(submit);
   let sun = document.querySelector("#Days");
   let weather = `<div class=row>`;
-  let day = ["", "", "", ""];
+  let day = ["Sat", "", "", ""];
   day.forEach(function (date) {
     weather =
       weather +
       ` <div class="col-3">
-        <div class="weather-forecast-date">Wed</div>
+        <div class="weather-forecast-date">${date}</div>
         <img
           src="http://openweathermap.org/img/wn/50d@2x.png"
           alt=""
