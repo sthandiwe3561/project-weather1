@@ -31,19 +31,20 @@ function date(dates) {
   let hour = now.getHours();
   let min = now.getMinutes();
 
-  let today = `Today is ${day}, ${Month} ${date}, ${year}, ${hour}:${min}`;
+  let today = `${day}, ${Month} ${date}, ${year}, ${hour}:${min}`;
   return today;
 }
 let p = document.querySelector("p");
 p.innerHTML = date(now);
 function display(coords) {
-  console.log(coords.lon);
+  console.log(coords);
   let lat = coords.lat;
   let long = coords.lon;
   let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metrics`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(sunnyCity);
 }
+
 function temperature(response) {
   console.log(response.data);
   celsiusTemp = response.data.main.temp;
@@ -66,53 +67,44 @@ function temperature(response) {
   iconn.setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
   display(response.data.coord);
 }
+function format(time) {
+  let days = new Date(time * 1000);
+  let dayNumbers = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let main = dayNumbers[days.getDay()];
+  return main;
+}
 
 function sunnyCity(submit) {
   console.log(submit);
   let sun = document.querySelector("#Days");
   let weather = `<div class=row>`;
-  let day = ["Sat", "", "", ""];
-  day.forEach(function (date) {
-    weather =
-      weather +
-      ` <div class="col-3">
-        <div class="weather-forecast-date">${date}</div>
+  let day = submit.data.daily;
+  day.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      weather =
+        weather +
+        ` <div class="col">
+        <div class="weather-forecast-date" id="DAY">${format(
+          forecastDay.dt
+        )}</div>
         <img
-          src="http://openweathermap.org/img/wn/50d@2x.png"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
           alt=""
           width="42"
         />
         <div class="forecast">
-          <span class="weatherDay"> 20° </span>
-          <span class="weatherNight"> 10° </span>
+          <span class="weatherDay"> ${Math.round(forecastDay.temp.max)}° </span>
+          <span class="weatherNight"> ${Math.round(
+            forecastDay.temp.min
+          )}°</span>
         </div>
       </div>`;
+    }
   });
   weather = weather + `</div>`;
   sun.innerHTML = weather;
-}
-function timeDegree() {
-  let time = document.querySelector("#temparet");
-  let degree = `<div class=row>`;
-  let days = ["", "", ""];
-  days.forEach(function (day) {
-    degree =
-      degree +
-      `<div class="col-3">
-      <div class="weather-forecast-degree">
-       <div class="time">4am</div>
-          <img
-          class="image"
-          src="http://openweathermap.org/img/wn/50d@2x.png"
-          alt=""
-          width="42"
-        />
-          <span class="weatherDegree">13°</span> 
-    </div>
-    </div>`;
-  });
-  degree = degree + `</div>`;
-  time.innerHTML = degree;
 }
 function searchCity(city) {
   let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";

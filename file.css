@@ -6,14 +6,17 @@ h2 {
   max-width: 300px;
   text-align: center;
 }
+div.cityName {
+  color: #fff;
+}
 div.body {
   border-radius: 10px;
-  border: 1px solid #1a64d6;
+  border: 1px solid transparent;
   margin: 0 auto;
   display: block;
   width: 600px;
-  height: 90vh;
-  background: powderblue;
+  height: 75vh;
+  background: black;
   margin-top: 20px;
 }
 input[type="search"] {
@@ -37,6 +40,7 @@ ul {
   position: relative;
   top: -30px;
   list-style-type: none;
+  color: #fff;
 }
 img {
   position: relative;
@@ -46,6 +50,15 @@ img {
 a {
   text-decoration: none;
   font-size: 20px;
+}
+#DAY {
+  color: #fff;
+}
+#temperat {
+  color: #fff;
+}
+.forecast {
+  color: #fff;
 }
 .fa-temperature-high {
   font-size: 80px;
@@ -83,6 +96,9 @@ a {
 .link {
   position: relative;
   bottom: -70px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  width: 350px;
 }
 .units {
   font-size: 20px;
