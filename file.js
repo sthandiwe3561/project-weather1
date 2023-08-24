@@ -93,6 +93,7 @@ function sunnyCity(submit) {
           }@2x.png"
           alt=""
           width="42"
+          class="image"
         />
         <div class="forecast">
           <span class="weatherDay"> ${Math.round(forecastDay.temp.max)}° </span>

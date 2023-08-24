@@ -15,10 +15,11 @@ div.body {
   margin: 0 auto;
   display: block;
   width: 600px;
-  height: 75vh;
-  background: black;
+  height: 78vh;
+  background-color: black;
   margin-top: 20px;
 }
+
 input[type="search"] {
   height: 5vh;
   border-radius: 5px;
@@ -117,4 +118,22 @@ a {
 .forecast {
   margin-top: -26px;
   font-size: 13px;
+}
+@media (max-width: 900px) {
+  div.body {
+    width: 350px;
+    height: 89vh;
+  }
+  #DAY {
+    font-size: 15px;
+  }
+  img {
+    font-size: 15px;
+  }
+  input[type="search"] {
+    width: 70%;
+  }
+  input[type="submit"] {
+    padding: 8px 10px;
+  }
 }
