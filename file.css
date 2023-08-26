@@ -123,7 +123,7 @@ a {
 @media (max-width: 500px) {
   div.body {
     width: 350px;
-    height: 100vh;
+    height: 78vh;
   }
   #DAY {
     font-size: 15px;

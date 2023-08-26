@@ -80,10 +80,10 @@ function sunnyCity(submit) {
   let weather = `<div class=row>`;
   let day = submit.data.daily;
   day.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 4) {
       weather =
         weather +
-        ` <div class="col">
+        ` <div class="col-3">
         <div class="weather-forecast-date" id="DAY">${format(
           forecastDay.dt
         )}</div>
