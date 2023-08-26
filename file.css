@@ -119,10 +119,10 @@ a {
   margin-top: -26px;
   font-size: 13px;
 }
-@media (max-width: 900px) {
+
+@media (max-width: 500px) {
   div.body {
     width: 350px;
-    height: 89vh;
   }
   #DAY {
     font-size: 15px;
